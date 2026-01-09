@@ -5,15 +5,15 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
 
-    private static SessionFactory sessionFactory;
+    private static final SessionFactory sessionFactory = buildSessionFactory();
 
-    static {
+    private static SessionFactory buildSessionFactory() {
         try {
-            sessionFactory = new Configuration()
+            return new Configuration()
                     .configure("hibernate.cfg.xml")
                     .buildSessionFactory();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Throwable ex) {
+            throw new ExceptionInInitializerError(ex);
         }
     }
 
