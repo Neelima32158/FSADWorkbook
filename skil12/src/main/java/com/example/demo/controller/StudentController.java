@@ -11,13 +11,11 @@ import java.util.List;
 @CrossOrigin(origins = "*")
 @RequestMapping("/students")
 public class StudentController {
-
     private final StudentService service;
 
     public StudentController(StudentService service) {
         this.service = service;
     }
-
     @PostMapping
     public ResponseEntity<Student> addStudent(@RequestBody Student student) {
         return ResponseEntity.ok(service.saveStudent(student));

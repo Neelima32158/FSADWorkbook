@@ -26,7 +26,6 @@ public class StudentService {
     public Student updateStudent(Long id, Student student) {
         Student existing = repo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Not Found"));
-
         existing.setName(student.getName());
         existing.setEmail(student.getEmail());
         existing.setCourse(student.getCourse());
