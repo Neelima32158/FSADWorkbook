@@ -23,7 +23,7 @@ public class LibraryController {
     public int getCount() {
         return 100;
     }
-
+    
     // 3. /price
     @GetMapping("/price")
     public double getPrice() {

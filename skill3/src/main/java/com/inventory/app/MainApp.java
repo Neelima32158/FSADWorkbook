@@ -31,8 +31,6 @@ public class MainApp {
 
         HibernateUtil.getSessionFactory().close();
     }
-
-    // 2️⃣ Insert 5–8 Products
     static void insertProducts() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
@@ -49,7 +47,6 @@ public class MainApp {
         session.close();
     }
 
-    // 3️⃣ a) Sort by Price Ascending
     static void sortByPriceAsc() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Query<Product> q = session.createQuery(
@@ -59,7 +56,6 @@ public class MainApp {
         session.close();
     }
 
-    // 3️⃣ b) Sort by Price Descending
     static void sortByPriceDesc() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Query<Product> q = session.createQuery(
@@ -69,7 +65,6 @@ public class MainApp {
         session.close();
     }
 
-    // 4️⃣ Sort by Quantity (Highest First)
     static void sortByQuantityDesc() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Query<Product> q = session.createQuery(
@@ -79,7 +74,6 @@ public class MainApp {
         session.close();
     }
 
-    // 5️⃣ a) First 3 Products (Pagination)
     static void paginationFirst3() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Query<Product> q = session.createQuery("FROM Product", Product.class);
@@ -89,7 +83,6 @@ public class MainApp {
         session.close();
     }
 
-    // 5️⃣ b) Next 3 Products (Pagination)
     static void paginationNext3() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Query<Product> q = session.createQuery("FROM Product", Product.class);
@@ -98,8 +91,7 @@ public class MainApp {
         q.list().forEach(p -> System.out.println(p.getName()));
         session.close();
     }
-
-    // 6️⃣ Aggregate Queries
+    
     static void aggregateQueries() {
         Session session = HibernateUtil.getSessionFactory().openSession();
 
@@ -129,7 +121,6 @@ public class MainApp {
         session.close();
     }
 
-    // 7️⃣ GROUP BY Description
     static void groupByDescription() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Query<Object[]> q = session.createQuery(
@@ -140,7 +131,6 @@ public class MainApp {
         session.close();
     }
 
-    // 8️⃣ WHERE Price Range
     static void filterByPriceRange() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Query<Product> q = session.createQuery(
@@ -152,8 +142,7 @@ public class MainApp {
                 System.out.println(p.getName()));
         session.close();
     }
-
-    // 9️⃣ LIKE Queries (FIXED & CLEAN)
+    
     static void likeQueries() {
         Session session = HibernateUtil.getSessionFactory().openSession();
 
