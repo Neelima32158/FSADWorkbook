@@ -1,0 +1,105 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, #74ebd5, #9face6);
+  height: 100vh;
+}
+
+/* Container box */
+.container {
+  width: 320px;
+  margin: 80px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* Headings */
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.3s;
+}
+
+/* Input focus effect */
+input:focus {
+  border-color: #6c63ff;
+  box-shadow: 0 0 5px #6c63ff;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+/* Button hover */
+button:hover {
+  background: #5548c8;
+}
+
+/* Links */
+a {
+  color: #6c63ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Paragraph */
+p {
+  margin-top: 15px;
+  color: #555;
+}
+
+/* Profile text */
+p b {
+  color: #333;
+}
+
+/* Navigation (optional if you add navbar later) */
+nav {
+  margin-bottom: 15px;
+}
+
+nav a {
+  margin: 0 10px;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
+    margin: 50px auto;
+  }
+}
